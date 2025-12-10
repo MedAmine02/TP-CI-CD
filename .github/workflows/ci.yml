@@ -1,0 +1,12 @@
+name: CI 
+
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+  test:
+    name: Test on Node.js
+    runs-on: FILL
