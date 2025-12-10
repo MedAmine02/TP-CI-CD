@@ -9,4 +9,24 @@ on:
 jobs:
   test:
     name: Test on Node.js
-    runs-on: FILL
+    runs-on: ubuntu-latest
+
+
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: User Node.js
+        uses: actions/setup-node@v4
+        with:
+          nodes-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install / npm ci
+
+      - name: run tests
+        run: npm test
+        env:
+          CI: true
